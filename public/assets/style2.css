@@ -1,0 +1,32 @@
+table {
+  background-color: Azure;
+  font-family: sans-serif;
+  font-size: 100%;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid gray;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  color: White;
+  background-color: rgba(13,181,200,1);
+}
+td {
+  color: black;
+  font-size: bold;
+  font-family: sans-serif;
+}
+@media(max-width: 360px){
+  
+  
+}
+

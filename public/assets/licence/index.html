@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html dir="rtl">
+    <head>
+        <title>New Card</title>
+        <link rel='stylesheet' href='css/style.css'/>
+    </head>
+    <body>
+<div id="capture" class="box">
+<img src="img/Qr.png" class="qr">
+<img src="img/photo.png" class="photo">
+<img src="img/Union.png" class="Union">
+<img src="img/P1.png" class="p1">
+<img src="img/signature.png" class="sign">
+<img src="img/photo.png" class="photo2">
+<p style="
+    position: absolute;
+    top: 210px;
+    right: 387px;
+    font-size: 32px;
+">خالد أبلهاض</p>
+<p style="
+    position: absolute;
+    top: 310px;
+    right: 389px;
+    font-size: 33px;
+">الجماعة المحلية</p>
+<p style="
+    position: absolute;
+    top: 411px;
+    right: 389px;
+    font-size: 30px;
+">الكاتب المحلي لمقاطعة جنان الورد</p>
+<h2 style="
+    position: absolute;
+    top: 449px;
+    right: 372px;
+    text-transform: uppercase;
+    letter-spacing: 13px;
+    font-size: 46.2px;
+    color: #2d2d2d;
+">ctfe721008001</h2>
+<div dir="ltr" 
+>
+<h1 style="
+    font-size: 27px;
+    position: absolute;
+    top: 213px;
+    padding-left: 10px;
+	">Khalid Abdelhad</h1>
+</div>
+
+<h2 style="
+    position: absolute;
+    top: 314px;
+    right: 922px;
+    font-size: 28px;
+">C438644</h2>
+<h2 style="
+    position: absolute;
+    top: 584px;
+    right: 938px;
+    font-size: 24px;
+	color: #2d2d2d;
+">01.01.2019</h2>
+</div> 
+
+        <button class="btn" id="take-a-screenshot">اضغظ لتحميل</button>
+
+        <br/><br/>
+        <div id="sam"></div>
+        <script src='js/html2canvas.min.js'></script>
+        
+        <script>
+            /* 
+                * This tells the webpage to 1. Use the html2canvas library; 
+                * 2. Tell the library to get the contents of the source div. <div id="capture"></div>
+                * 3. Then make an image and put it in the target div. <div id="sam"></div>
+                */
+            //Define the what to copy (source) and
+            var source = document.querySelector("#capture");
+            //where to store the image (target)                
+            var target = document.querySelector("#sam");
+
+
+            //Now let's click a button to execute html2canvas
+            var button = document.querySelector("#take-a-screenshot");
+            button.onclick = function(){
+                //Execute html2canvas library
+                html2canvas(source).then(canvas => {
+                    //target.appendChild(canvas);
+                    saveAs(canvas.toDataURL(), 'canvas.png');
+                });
+
+            };
+
+            //Save as function
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+
+                //Firefox requires the link to be in the body
+                document.body.appendChild(link);
+
+                //simulate click
+                link.click();
+
+                //remove the link when done
+                document.body.removeChild(link);
+                } else {
+                window.open(uri);
+                }
+
+            }
+
+
+
+        </script>
+
+    </body>
+</html>
